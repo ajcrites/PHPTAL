@@ -134,7 +134,7 @@ class HTML5ModeTest extends PHPTAL_TestCase
             $tpl->setOutputMode(PHPTAL::HTML5);
             $tpl->setSource('<'.$name.' id="123">foo</'.$name.'>');
             $res = $tpl->execute();
-            $this->assertEquals($res, '<'.$name.' id=123>');
+            $this->assertEquals('<'.$name.' id=123>', $res);
         }
     }
 

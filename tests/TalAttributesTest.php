@@ -190,20 +190,20 @@ EOT;
             $tpl->setSource('<p '.$name.'="123" tal:attributes="'.$name.' attrval"></p>');
             $tpl->attrval = true;
             $res = $tpl->execute();
-            $this->assertEquals($res, '<p '.$name.'="'.$name.'"></p>');
+            $this->assertEquals('<p '.$name.'="'.$name.'"></p>', $res);
             $tpl->attrval = false;
             $res = $tpl->execute();
-            $this->assertEquals($res, '<p></p>');
+            $this->assertEquals('<p></p>', $res);
             // HTML5
             $tpl = $this->newPHPTAL();
             $tpl->setOutputMode(PHPTAL::HTML5);
             $tpl->setSource('<p '.$name.'="123" tal:attributes="'.$name.' attrval"></p>');
             $tpl->attrval = true;
             $res = $tpl->execute();
-            $this->assertEquals($res, '<p '.$name.'></p>');
+            $this->assertEquals('<p '.$name.'></p>', $res);
             $tpl->attrval = false;
             $res = $tpl->execute();
-            $this->assertEquals($res, '<p></p>');
+            $this->assertEquals('<p></p>', $res);
         }
     }
 }
