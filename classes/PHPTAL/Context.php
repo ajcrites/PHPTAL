@@ -556,7 +556,7 @@ function phptal_tostring($var)
  */
 function phptal_unravel_closure($var)
 {
-    while ($var instanceof Closure) {
+    while (is_object($var) && is_callable($var)) {
         $var = $var();
     }
     return $var;
